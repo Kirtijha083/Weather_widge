@@ -42,7 +42,7 @@ let handleSubmit =  (event) => {
 
     return (
         <div className='searchBox'>
-            <h3>Search for a weather</h3>
+            {/* <h3>Search for a weather</h3> */}
             <form onSubmit={handleSubmit}>
                 <TextField id="city" label="City_Name" variant="outlined" required value={city} onChange={handleChange}/>
                 <br></br><br></br><br></br>
