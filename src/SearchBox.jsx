@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import "./SearchBox.css";
 import { useState } from 'react';
 
-export default function SearchBox() {
+export default function SearchBox({updateInfo}) {
 
 // then added state variable for search-box
 let [city, setCity] = useState("");
@@ -27,17 +27,19 @@ let getWeatherInfo = async () => {
         weather:jsonResponse.weather[0].description,
     };
     console.log(result);
+    return result;
 };
 
 let handleChange =  (event) => {
     setCity(event.target.value);
 }
 
-let handleSubmit =  (event) => {
+let handleSubmit =  async (event) => {
     event.preventDefault();
     console.log(city);
     setCity("");
-    getWeatherInfo(); //calling this function on form submit 
+  let newinfo = await getWeatherInfo(); //calling this function on form submit 
+  updateInfo(newinfo);
 }
 
     return (

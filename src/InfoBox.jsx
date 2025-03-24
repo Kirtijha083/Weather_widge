@@ -4,18 +4,18 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import "./InfoBox.css";
 
-export default function InfoBox() {
+export default function InfoBox({info}) {
   const init_URL_img = "https://images.unsplash.com/photo-1680352267694-a7fd4c33d4e1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGR1c3R5JTIwd2VhdGhlcnxlbnwwfHwwfHx8MA%3D%3D";
     // creating object
-    let info = {
-        city: "Delhi",
-        feelsLike: 31.65,
-        humidity: 15,
-        temp: 34.05,
-        tempMax: 34.05,
-        tempMin: 34.05,
-        weather: "haze",
-    };
+    // let info = {
+    //     city: "Delhi",
+    //     feelsLike: 31.65,
+    //     humidity: 15,
+    //     temp: 34.05,
+    //     tempMax: 34.05,
+    //     tempMin: 34.05,
+    //     weather: "haze",
+    // };//...this object will pass in the form of props through weatherApp.jsx
 
     return (
         <div className="InfoBox">
