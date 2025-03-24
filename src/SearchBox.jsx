@@ -15,8 +15,18 @@ const API_KEY = "ca8017f2a2226fc8e181a39a18f54519";
 let getWeatherInfo = async () => {
     let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
     let jsonResponse = await response.json();
-    console.log(jsonResponse);
-    // 
+    // console.log(jsonResponse);
+    //creating new object from jsonResponse
+    let result = {
+        city:city,
+        temp:jsonResponse.main.temp,
+        tempMin:jsonResponse.main.temp_min,
+        tempMax:jsonResponse.main.temp_max,
+        humidity:jsonResponse.main.humidity,
+        feelsLike:jsonResponse.main.feels_like,
+        weather:jsonResponse.weather[0].description,
+    };
+    console.log(result);
 };
 
 let handleChange =  (event) => {
